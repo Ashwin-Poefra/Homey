@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "project#index", as: 'project_index'
+  resources :status_logs, only: [:create]
 end

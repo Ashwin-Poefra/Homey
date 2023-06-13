@@ -1,3 +1,11 @@
-<h1>
-    Project Conversation History
-</h1>
+<div>
+    <h1>Project Conversation History</h1>
+    <%= form_with url: '/status_logs', method: :post do |f| %>
+        <%= f.label :status, "Status:" %>
+        <%= f.select :status, options_for_select(@statuses, [@last_status]), {}, onchange: "this.form.submit()" %>
+    <% end %>
+
+    <ul>
+        <%= @status.map { |el| content_tag(:li, el[:status]) }.join.html_safe %>
+    </ul>
+</div>
