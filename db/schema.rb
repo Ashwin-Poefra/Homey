@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_114628) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_115437) do
+  create_table "comments", force: :cascade do |t|
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "status_logs", force: :cascade do |t|
     t.integer "status"
     t.datetime "created_at", null: false
