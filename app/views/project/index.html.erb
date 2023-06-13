@@ -1,0 +1,20 @@
+<div class="layout-background">
+    <h1 class="header">Project Conversation History</h1>
+    <div class="center-container">
+        <%= form_with url: '/status_logs', method: :post, html: { class: "form-option"} do |f| %>
+            <%= f.label :status, "Status:" %>
+            <%= f.select :status, options_for_select(@statuses.map { |s| [s, s, { class: 'options' }] }, [@last_status]), {}, onchange: "this.form.submit()" %>
+        <% end %>
+
+        <ul class="content">
+            <%= @all.map { |el| content_tag(:li, el[:status] ? "Status: #{el[:status]}" : "Comment: #{el[:comment]}" ) }.join.html_safe %>
+        </ul>
+
+        <%= form_with url: '/comments', method: :post, html: { class: "footer" } do |f| %>
+            <%= f.label :comment, "Comment:" %>
+            <%= f.text_field :comment, class: "input-form"%>
+
+            <%= f.submit :Submit, class: "button" %>
+        <% end %>
+    </div>
+</div>
