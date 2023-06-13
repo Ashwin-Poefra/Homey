@@ -13,3 +13,143 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .circle {
+    border-radius: 50%;
+    left: calc(50% - 6.25em);
+    top: calc(50% - 12.5em);
+    transform-origin: 50% 16.5em;
+    width: 12.5em;
+    height: 12.5em;
+    position: absolute;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, .5);
+    filter: blur(25px);
+    opacity: 0.3;
+  }
+
+  .one,
+  .three {
+    background-color: rgb(165 180 252);
+  }
+
+  .two {
+    background-color: rgb(110 231 183);
+  }
+  .four {
+    background-color: rgb(125 211 252);
+  }
+
+  .one {
+    transform: rotateZ(0);
+  }
+
+  .two {
+    transform: rotateZ(90deg);
+  }
+
+  .three {
+    transform: rotateZ(180deg);
+  }
+
+  .four {
+    transform: rotateZ(-90deg);
+  }
+
+
+  @keyframes spin {
+    0% {
+      transform: rotateZ(0);
+    }
+
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  .container {
+    animation: spin 25s linear infinite;
+    position: fixed;
+  }
+
+  .layout-background {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(15 23 42);
+    color: rgb(226 232 240);
+    display: grid;
+    place-items: center;
+    align-content: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 4rem;
+    position: fixed;
+    top: 5%;
+  }
+
+  .input-form {
+    border-radius: 15px;
+    background: black;
+    color: white;
+    padding: 10px;
+    width: 300px;
+  }
+
+  .footer {
+    bottom: 10%;
+    position: fixed;
+    font-size: 32px;
+    color: cornsilk;
+    justify-content: center;
+    display: flex;
+  }
+
+  .form-option {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 32px;
+    color: cornsilk;
+  }
+
+  .content {
+    background: black;
+    height: 500px;
+    padding-top: 30px;
+    overflow-y: auto;
+    overflow-anchor: auto;
+  }
+
+  .button {
+    background-color: rgba(30,41,59,.9);
+    color: white;
+    font-size: 23px;
+    border-radius: 15px;
+    width: 104px;
+    height: 40px;
+    margin-left: 30px;
+  }
+
+  .center-container {
+    width: 800px;
+  }
+
+  .options, #status {
+    padding: 10px;
+    width: 140px;
+    background-color: rgba(30,41,59,.9);
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+  }
