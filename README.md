@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Homey Assignment
 
-Things you may want to cover:
+## Task
+- leave a comment
+- change the status of the project
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run the project locally
+- Clone the project (https://github.com/dreamcatcher0101/homey-assessment.git)
+- Run `bundle install`
+- Run `rails db:create`
+- Run `rails db:migrate`
+- Run `rails db:seed`
+- Run `rails s`
+- Open your browser and go to `localhost:3000`
